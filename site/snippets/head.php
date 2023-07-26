@@ -116,10 +116,9 @@
 			xhr.send('');
 		})();
 	</script>
-	<!-- <?= css('/assets/css/styles.css') ?>
-	<?= css('/assets/css/styles-management.css') ?> -->
-	<?= css('/assets/css/index.css') ?>
+	<?= css('/assets/css/styles.css') ?>
+	<?= css('/assets/css/styles-management.css') ?>
+	<?= css('/assets/css/styles-biography.css') ?>
+	<!-- <?= css('/assets/css/index.css') ?> -->
 
-	<!-- <link rel="stylesheet" href="assets/css/styles.css?hash" />
-  <link rel="stylesheet" href="assets/css/styles-management.css?hash" /> -->
 </head>
