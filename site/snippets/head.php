@@ -119,6 +119,7 @@
 	<?= css('/assets/css/styles.css') ?>
 	<?= css('/assets/css/styles-management.css') ?>
 	<?= css('/assets/css/styles-biography.css') ?>
+	<?= css('/assets/css/styles-report-corruption.css') ?>
 	<!-- <?= css('/assets/css/index.css') ?> -->
 
 </head>
