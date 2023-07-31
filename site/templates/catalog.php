@@ -11,7 +11,6 @@
 
 			<section class="management">
 
-
 				<ul>
 					<?php foreach ($page->children()->listed() as $item) : ?>
 						<li class="management__item">
@@ -43,16 +42,10 @@
 						</li>
 					<?php endforeach ?>
 				</ul>
-
-
-
-
 			</section>
 		</div>
 	</main>
 	</div>
-
-
 	<?php snippet('sitemap') ?>
 
 	<?php snippet('footer') ?>
