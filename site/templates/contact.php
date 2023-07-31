@@ -7,8 +7,6 @@
 
 		<div data-anim="fade-up" data-anim-value="50">
 			<h1 class="h1 page-title _md-4"><?= $page->title() ?></h1>
-
-
 			<section class="form-block" data-form-validate="data-form-validate" data-callback="base">
 
 
