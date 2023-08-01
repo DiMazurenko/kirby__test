@@ -20,6 +20,8 @@ columns:
             type: textarea
           delivery:
             type: textarea
+
+
   - width: 1/2
     sections:
       gallery:
