@@ -15,6 +15,8 @@ return function ($kirby, $pages, $page) {
 			'name'  => get('name'),
 			'email' => get('email'),
 			'text'  => get('text')
+			'text'  => get('text')
+			'text'  => get('text')
 		];
 
 		$rules = [
