@@ -1,1 +1,3 @@
 Title: Тестовый проект
+
+mail: test@test.ru
