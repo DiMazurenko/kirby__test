@@ -8,16 +8,16 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
-    const [theme, setTheme] = useState<Theme>(defaultTheme)
+  const [theme, setTheme] = useState<Theme>(defaultTheme)
 
   const defaultProps = useMemo(() => ({ theme, setTheme })
-        , [theme])
+    , [theme])
 
   return (
         <ThemeContext.Provider value={defaultProps}>
           {children}
       </ThemeContext.Provider>
-    );
+  )
 }
 
 export default ThemeProvider
