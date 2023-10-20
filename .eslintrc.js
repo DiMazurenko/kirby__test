@@ -48,10 +48,10 @@ module.exports = {
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/naming-convention': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true }],
-    'max-len': ['error', { ignoreComments: true }]
+    'i18next/no-literal-string': ['error', {markupOnly: true}],
+    'max-len': ['error', {ignoreComments: true, code: 100}]
   },
   globals: {
     __IS_DEV__: true
   }
-}
+};
