@@ -7,17 +7,15 @@ module.exports = {
   extends: [
     'standard-with-typescript',
     'plugin:react/recommended',
-    'plugin:i18next/recommended'
+    'plugin:i18next/recommended',
+    'plugin:storybook/recommended'
   ],
   overrides: [
     {
       env: {
         node: true
       },
-      files: [
-        '.eslintrc.{js,cjs}',
-        '**/src/**/*.test.{ts,tsx}'
-      ],
+      files: ['.eslintrc.{js,cjs}', '**/src/**/*.test.{ts,tsx}'],
       rules: { 'i18next/no-literal-string': 'off' },
       parserOptions: {
         sourceType: 'script'
@@ -28,11 +26,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: [
-    'react',
-    '@typescript-eslint',
-    'i18next'
-  ],
+  plugins: ['react', '@typescript-eslint', 'i18next'],
   rules: {
     // 'react/jsx-indent': [2, 4],
     // 'react/jsx-indent-props': [2, 4],
@@ -50,8 +44,11 @@ module.exports = {
     '@typescript-eslint/prefer-nullish-coalescing': 'off',
     '@typescript-eslint/strict-boolean-expressions': 'off',
     '@typescript-eslint/naming-convention': 'off',
-    'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }],
-    'max-len': ['error', { ignoreComments: true, code: 100 }]
+    'i18next/no-literal-string': [
+      'error',
+      { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }
+    ],
+    'max-len': ['error', { ignoreComments: true, code: 100 }],
   },
   globals: {
     __IS_DEV__: true
