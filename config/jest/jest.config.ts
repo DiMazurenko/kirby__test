@@ -3,8 +3,8 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type {Config} from 'jest';
-import path from 'path';
+import type { Config } from 'jest'
+import path from 'path'
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -28,7 +28,7 @@ const config: Config = {
 
   moduleNameMapper: {
     '\\.s?css$': 'identity-obj-proxy',
-    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
   },
 
   // Indicates whether the coverage information should be collected while executing the test
@@ -140,7 +140,7 @@ const config: Config = {
 
   // A list of paths to directories that Jest should use to search for files in
   roots: [
-    "<rootDir>"
+    '<rootDir>'
   ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
@@ -205,6 +205,6 @@ const config: Config = {
 
   // Whether to use watchman for file crawling
   // watchman: true,
-};
+}
 
-export default config;
+export default config
