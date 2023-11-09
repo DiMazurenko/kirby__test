@@ -26,7 +26,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
-  plugins: ['react', '@typescript-eslint', 'i18next'],
+  plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
   rules: {
     // 'react/jsx-indent': [2, 4],
     // 'react/jsx-indent-props': [2, 4],
@@ -49,6 +49,8 @@ module.exports = {
       { markupOnly: true, ignoreAttribute: ['data-testid', 'to'] }
     ],
     'max-len': ['error', { ignoreComments: true, code: 100 }],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'error'
   },
   globals: {
     __IS_DEV__: true

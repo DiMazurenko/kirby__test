@@ -1,4 +1,3 @@
-import './styles/index.scss'
 import React, { Suspense, useState } from 'react'
 
 import { useTheme } from 'app/providers/ThemeProvider'
@@ -12,27 +11,11 @@ import { Modal } from 'shared/ui/Modal/Modal'
 
 const App = () => {
   const { theme } = useTheme()
-  const [isOpen, setIsOpen] = useState(false)
 
   return (
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
-        <button
-          onClick={() => {
-            setIsOpen(true)
-          }}
-        >
-          toggle
-        </button>
-        <Modal
-          isOpen={isOpen}
-          onClose={() => {
-            setIsOpen(false)
-          }}
-        >
-          <p>HI</p>
-        </Modal>
         <div className="content-page">
           <Sidebar />
           <AppRouter />

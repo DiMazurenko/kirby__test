@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './Modal.module.scss'
-import { useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
+import { Portal } from 'shared/ui/Portal/Portal'
 
 interface ModalProps {
   className?: string
@@ -15,7 +16,7 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
   const [isClosing, setIsClosing] = useState(false)
   const timerRef = useRef<ReturnType<typeof setTimeout>>()
 
-  const closeHandler = () => {
+  const closeHandler = useCallback(() => {
     if (onClose) {
       setIsClosing(true)
       timerRef.current = setTimeout(() => {
@@ -23,13 +24,16 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
         setIsClosing(false)
       }, ANIMATION_DELAY)
     }
-  }
+  }, [onClose])
 
-  const onKeyDown = (e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler()
-    }
-  }
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeHandler()
+      }
+    },
+    [closeHandler]
+  )
 
   const onContentClick = (e: React.MouseEvent) => {
     e.stopPropagation()
@@ -44,7 +48,7 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
       clearTimeout(timerRef.current)
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [isOpen])
+  }, [isOpen, onKeyDown])
 
   const mods: Record<string, boolean> = {
     [cls.opened]: isOpen,
@@ -52,12 +56,14 @@ export const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
   }
 
   return (
-    <div className={classNames(cls.Modal, mods, [className])}>
-      <div className={cls.overlay} onClick={closeHandler}>
-        <div className={cls.content} onClick={onContentClick}>
-          {children}
+    <Portal>
+      <div className={classNames(cls.Modal, mods, [className])}>
+        <div className={cls.overlay} onClick={closeHandler}>
+          <div className={cls.content} onClick={onContentClick}>
+            {children}
+          </div>
         </div>
       </div>
-    </div>
+    </Portal>
   )
 }
