@@ -1,4 +1,4 @@
-import React, { Suspense, useState } from 'react'
+import React, { Suspense } from 'react'
 
 import { useTheme } from 'app/providers/ThemeProvider'
 import { classNames } from 'shared/lib/classNames/classNames'
@@ -7,7 +7,6 @@ import { Navbar } from 'widgets/Navbar'
 import { Sidebar } from 'widgets/Sidebar'
 
 import 'shared/config/i18n/i18n'
-import { Modal } from 'shared/ui/Modal/Modal'
 
 const App = () => {
   const { theme } = useTheme()
