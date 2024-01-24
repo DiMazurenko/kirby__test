@@ -31,8 +31,8 @@ ErrorBoundaryState> {
 
     if (hasError) {
       return <Suspense fallback={''}>
-        <ErrorPage/>
-      </Suspense>
+                <ErrorPage/>
+            </Suspense>
     }
 
     return children

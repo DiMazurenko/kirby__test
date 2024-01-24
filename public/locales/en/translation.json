@@ -6,5 +6,7 @@
 	"Страница не найдена": "Page not found",
 	"Произошла непредвиденная ошибка": "An unexpected error occurred",
 	"Обновить страницу": "Reload page",
-	"Короткий язык": "EN"
+	"Короткий язык": "EN",
+	"increment": "increment",
+	"decrement": "decrement"
 }
