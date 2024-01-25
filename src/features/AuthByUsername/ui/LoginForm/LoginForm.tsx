@@ -7,10 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 
 interface LoginFormProps {
   className?: string
-
 }
 
 // eslint-disable-next-line react/display-name
@@ -29,8 +29,8 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
   }, [dispatch]);
 
   const onLoginClick = useCallback(() => {
-    //
-  }, []);
+    dispatch(loginByUsername({ username, password }));
+  }, [dispatch]);
 
   return (
 		<div className={classNames(cls.LoginForm, {}, [className])}>
@@ -57,6 +57,5 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 				{t('Войти')}
 			</Button>
 		</div>
-
   );
 });
