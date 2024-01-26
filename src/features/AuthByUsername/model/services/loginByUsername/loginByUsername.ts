@@ -1,4 +1,4 @@
-import { AnyAction, createAsyncThunk, Dispatch } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { type User } from 'entities/User';
 

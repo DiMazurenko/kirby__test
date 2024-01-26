@@ -8,6 +8,7 @@ import { memo, useCallback } from 'react';
 import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
+import { type AppDispatch } from 'app/providers/StoreProvider';
 
 interface LoginFormProps {
   className?: string
@@ -17,7 +18,7 @@ interface LoginFormProps {
 export const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const { username, password } = useSelector(getLoginState);
 
   const onChangeUserName = useCallback((value: string) => {
@@ -30,7 +31,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
   const onLoginClick = useCallback(() => {
     dispatch(loginByUsername({ username, password }));
-  }, [dispatch]);
+  }, [dispatch, password, username]);
 
   return (
 		<div className={classNames(cls.LoginForm, {}, [className])}>
