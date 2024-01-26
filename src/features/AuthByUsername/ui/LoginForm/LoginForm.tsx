@@ -9,6 +9,7 @@ import { loginActions } from '../../model/slice/loginSlice';
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { type AppDispatch } from 'app/providers/StoreProvider';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 
 interface LoginFormProps {
   className?: string
@@ -19,7 +20,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch<AppDispatch>();
-  const { username, password } = useSelector(getLoginState);
+  const { username, password, isLoading, error } = useSelector(getLoginState);
 
   const onChangeUserName = useCallback((value: string) => {
     dispatch(loginActions.setUserName(value));
@@ -35,6 +36,8 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
   return (
 		<div className={classNames(cls.LoginForm, {}, [className])}>
+			<Text title={t('Форма авторизации')}/>
+			{error && <Text text={error} theme={TextTheme.ERROR}/>}
 			<Input
 				autofocus
 				type="text"
@@ -54,6 +57,7 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 				className={cls.loginBtn}
 				theme={ButtonTheme.OUTLINE}
 				onClick={onLoginClick}
+				disabled={isLoading}
 			>
 				{t('Войти')}
 			</Button>
