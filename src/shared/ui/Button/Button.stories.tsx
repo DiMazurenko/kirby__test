@@ -1,7 +1,7 @@
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react';
 
-import { Button, ButtonTheme } from './Button'
-import '../../../app/styles/index.scss'
+import { Button, ButtonTheme } from './Button';
+import '../../../app/styles/index.scss';
 
 const meta = {
   title: 'shared/Button',
@@ -11,27 +11,27 @@ const meta = {
   },
   tags: ['autodocs'],
   argTypes: {}
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Button>;
 
-export default meta
-type Story = StoryObj<typeof meta>
+export default meta;
+type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
   args: {
     children: 'Text'
   }
-}
+};
 
 export const Clear: Story = {
   args: {
     children: 'Text',
     theme: ButtonTheme.CLEAR
   }
-}
+};
 
 export const Outline: Story = {
   args: {
     children: 'Text',
     theme: ButtonTheme.OUTLINE
   }
-}
+};

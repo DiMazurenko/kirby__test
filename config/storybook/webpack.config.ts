@@ -1,7 +1,7 @@
-import type webpack from 'webpack'
-import { type BuildPaths } from '../build/types/config'
-import path from 'path'
-import { buildCssLoader } from '../build/loaders/buildCssLoader'
+import type webpack from 'webpack';
+import { type BuildPaths } from '../build/types/config';
+import path from 'path';
+import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
 export default ({ config }: { config: webpack.Configuration }) => {
   const paths: BuildPaths = {
@@ -9,12 +9,12 @@ export default ({ config }: { config: webpack.Configuration }) => {
     html: '',
     build: '',
     entry: ''
-  }
+  };
 
-  config.resolve.modules.push(paths.src)
-  config.resolve.extensions.push('.ts', '.tsx')
+  config.resolve.modules.push(paths.src);
+  config.resolve.extensions.push('.ts', '.tsx');
 
-  config.module.rules.push(buildCssLoader(true))
+  config.module.rules.push(buildCssLoader(true));
 
-  return config
-}
+  return config;
+};

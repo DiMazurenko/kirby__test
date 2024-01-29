@@ -31,13 +31,13 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
   }, [dispatch]);
 
   const onLoginClick = useCallback(() => {
-    dispatch(loginByUsername({ username, password }));
+    void dispatch(loginByUsername({ username, password }));
   }, [dispatch, password, username]);
 
   return (
 		<div className={classNames(cls.LoginForm, {}, [className])}>
 			<Text title={t('Форма авторизации')}/>
-			{error && <Text text={error} theme={TextTheme.ERROR}/>}
+			{error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR}/>}
 			<Input
 				autofocus
 				type="text"

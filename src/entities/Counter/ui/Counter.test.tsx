@@ -1,13 +1,13 @@
-import '@testing-library/jest-dom'
-import { screen } from '@testing-library/react'
-import { componentRender } from 'shared/lib/tests/componentRender/ComponentRender'
-import { Counter } from './Counter'
+import '@testing-library/jest-dom';
+import { screen } from '@testing-library/react';
+import { componentRender } from 'shared/lib/tests/componentRender/ComponentRender';
+import { Counter } from './Counter';
 
 describe('Counter', () => {
   test('test render', () => {
-    componentRender(<Counter/>, { initialState: { counter: { value: 10 } } })
-    expect(screen.getByTestId('value-title')).toHaveTextContent('10')
-  })
+    componentRender(<Counter/>, { initialState: { counter: { value: 10 } } });
+    expect(screen.getByTestId('value-title')).toHaveTextContent('10');
+  });
 
   // test('increment', () => {
   // 	componentRender(<Counter/>, {initialState: {counter: {value: 10}}});
@@ -20,4 +20,4 @@ describe('Counter', () => {
   // 	userEvent.click(screen.getByTestId('decrement-btn'));
   // 	expect(screen.getByTestId('value-title')).toHaveTextContent('9');
   // });
-})
+});
