@@ -11,12 +11,12 @@ import { loginByUsername } from '../../model/services/loginByUsername/loginByUse
 import { type AppDispatch } from 'app/providers/StoreProvider';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 
-interface LoginFormProps {
+export interface LoginFormProps {
   className?: string
 }
 
 // eslint-disable-next-line react/display-name
-export const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className }: LoginFormProps) => {
   const { t } = useTranslation();
 
   const dispatch = useDispatch<AppDispatch>();
@@ -64,3 +64,5 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 		</div>
   );
 });
+
+export default LoginForm;
