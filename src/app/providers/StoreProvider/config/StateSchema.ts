@@ -3,6 +3,7 @@ import { type UserSchema } from 'entities/User';
 import { type LoginSchema } from 'features/AuthByUsername';
 import { createReduxStore } from 'app/providers/StoreProvider';
 import { type AnyAction, type CombinedState, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
+import { useDispatch } from 'react-redux';
 
 const store = createReduxStore();
 
