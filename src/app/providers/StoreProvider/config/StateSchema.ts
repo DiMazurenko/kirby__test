@@ -3,7 +3,7 @@ import { type UserSchema } from 'entities/User';
 import { type LoginSchema } from 'features/AuthByUsername';
 import { createReduxStore } from 'app/providers/StoreProvider';
 import { type AnyAction, type CombinedState, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
-import { useDispatch } from 'react-redux';
+import { type ProfileSchema } from 'entities/Profile';
 
 const store = createReduxStore();
 
@@ -13,6 +13,7 @@ export interface StateSchema {
 
   // Async reducers
   loginForm?: LoginSchema
+  profile?: ProfileSchema
 }
 
 export type AppDispatch = typeof store.dispatch;

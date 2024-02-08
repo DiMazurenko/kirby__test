@@ -31,6 +31,7 @@ module.exports = {
     // 'react/jsx-indent': [2, 4],
     // 'react/jsx-indent-props': [2, 4],
     // 'indent': [2, 4],
+    'react/display-name': 'off',
     'no-tabs': 0,
     'import/prefer-default-export': 'off',
     'no-unused-vars': 'warn',
