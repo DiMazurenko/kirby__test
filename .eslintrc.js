@@ -57,6 +57,7 @@ module.exports = {
     '@typescript-eslint/semi': ['error', 'always']
   },
   globals: {
-    __IS_DEV__: true
+    __IS_DEV__: true,
+    __API__: true
   }
 };

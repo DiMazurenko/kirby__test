@@ -4,6 +4,7 @@ import { type LoginSchema } from 'features/AuthByUsername';
 import { createReduxStore } from 'app/providers/StoreProvider';
 import { type AnyAction, type CombinedState, type EnhancedStore, type Reducer, type ReducersMapObject } from '@reduxjs/toolkit';
 import { type ProfileSchema } from 'entities/Profile';
+import { type AxiosInstance } from 'axios';
 
 const store = createReduxStore();
 
@@ -29,4 +30,14 @@ export interface ReducerManager {
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
   reducerManager: ReducerManager
+}
+
+export interface ThunkExtraArg {
+  api: AxiosInstance
+  navigate: any
+}
+
+export interface ThunkConfig<T> {
+  rejectValue: T
+  extra: ThunkExtraArg
 }
